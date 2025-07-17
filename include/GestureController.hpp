@@ -20,3 +20,21 @@
 // - (Future) std::string inferGesture(const cv::Mat& processedFrame): Runs model inference
 //
 // Dependencies: OpenCV (cv::Mat), (Future) LibTorch
+#pragma once
+#include <string>
+#include <opencv2/core.hpp>
+
+// Returns the recognized gesture label from the processed frame.
+std::string recognizeGesture(const cv::Mat& processedFrame);
+
+// Executes an action based on the recognized gesture.
+void executeAction(const std::string& gesture);
+
+//Loads a TorchScript model for gesture recognition.
+void loadModel(const std::string& modelPath);
+
+// Runs model inference and returns the gesture label.
+std::string inferGesture(const cv::Mat& processedFrame);
+
+
+

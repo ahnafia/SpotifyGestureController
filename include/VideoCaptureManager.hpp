@@ -21,3 +21,21 @@
 // - bool isOpened() const: Checks if webcam is open
 //
 // Dependencies: OpenCV (cv::VideoCapture, cv::Mat)
+
+
+#pragma once
+#include <opencv2/core.hpp>
+
+// Opens the webcam with the specified camera index (default is 0).
+bool open(int cameraIndex = 0);
+
+// Captures a frame from the webcam and stores it in the provided cv::Mat reference.
+// Returns true if the frame was successfully captured.
+bool getFrame(cv::Mat& frame);
+
+// Releases the webcam resource.
+void release();
+
+// Returns true if the webcam is currently open.
+bool isOpened();
+
